@@ -1,0 +1,96 @@
+/* COMMON Code */
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* font collection */
+.poppins{
+    font-family: "Poppins", sans-serif;
+}
+.archivo-black{
+    font-family: "Archivo Black", sans-serif;
+}
+.playfair-display{
+    font-family: "Playfair Display", serif;
+}
+.montserrat{
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* Main Code */
+
+
+/* Footer */
+
+footer{
+    background-color: var(--bg);
+    padding: 2rem 0;
+    position: relative;
+}
+footer .copy{
+    justify-content: center;
+    align-items: center;
+    color: #878e99;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.copy p{
+    text-align: center;
+}
+footer .up{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    position: absolute;
+    right: -30%;
+    /* top: 50px; */
+    background-color: transparent;
+    border: 2px solid #ff014f;
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+footer .up a{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    color: #ff014f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .up:hover{
+    background-color: #ff014f;
+}
+footer .up:hover a{
+    color: var(--bg);
+}
+
+/* Nav */
+.active{
+    color: #ff014f !important;
+}
+
+/* flash */
+
+.flash {
+    background-color: #44e78b15;
+    border: 2px solid #44e78b94;
+    color: green;
+    font-size: 1.2rem;
+    margin: 0 5rem;
+}
+.btn-close{
+    background-color: green;
+}

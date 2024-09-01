@@ -1,0 +1,35 @@
+.blog-container{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+.blog-container>div{
+    height: 300px;
+    width: 450px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+.blog-container>div>img{
+    height: 100%;
+    width: 100%;
+}
+.blog-container h1{
+    font-size: 3rem;
+    font-weight:700;
+    text-align: center;
+}
+
+@media screen and (max-width:550px) {
+    .blog-container>div{
+        height: 200px;
+        width: 350px;
+    }
+    .blog-container h1{
+        font-size: 2.4rem;
+    }
+}

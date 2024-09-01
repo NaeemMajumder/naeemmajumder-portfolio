@@ -1,0 +1,110 @@
+<% layout("/boilerplate/admin_boiler.ejs") %>
+<body>
+    <main>
+
+        <!-- Project Form -->
+        <section class="review-form-div width margin">
+
+            <h2 id="contact" class="montserrat skill-h2 do review-h2">Upload Projects</h2>
+
+            <div class="review-div montserrat">
+                <form enctype="multipart/form-data" method="POST" action="/admin/projects" novalidate class="needs-validation">
+
+                    <div class="name">
+                        <label class="contact-label" for="name">TITLE <span>*</span></label> 
+                        <br>
+                        <input class="input" type="text" id="name" name="title" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please write your name.
+                        </div>
+                    </div>
+
+                    <div class="image">
+                        <label class="contact-label" for="image">IMAGE <span>*</span></label>
+                        <br> 
+                        <input class="input" type="file" id="image" name="image">
+                    </div>
+                
+                    <div class="profession">
+                        <label class="contact-label" for="profession">TOOLS I USE <span>*</span></label>
+                        <br>
+                        <input class="input" type="text" id="profession" name="tools" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please write your profession.
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <label class="contact-label" for="post">LIVE LINK <span>*</span></label>
+                        <br>
+                        <input class="input" type="text" id="post" name="link" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please write post.
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="comment">
+                        <label class="contact-label" for="message">DESCRIPTION <span>*</span></label> <br>
+                        <textarea class="textarea" name="description" id="message" required></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please write a message.
+                        </div>
+                    </div>
+
+                    <button class="btn-send review-btn">SEND MESSAGE</button>
+
+                </form>
+            </div>
+        </section>
+
+        <!-- All Projects -->
+        <section id="pro" class="projects width margin services">
+
+            <p class="montserrat skill-p">Projects I have worked on</p>
+            <h2 class="montserrat skill-h2 do">Projects</h2>
+
+            <h3 class="count-review">Total Projects: <span><%= projects.length  %></span></h3>
+
+            <div class="pro-container">
+                
+                <% for(let project of projects) { %>
+                    <div class="pro-card">
+                        <div class="pro-div-content">
+                            <p class="pro-tool poppins"><%= project.tools %></p>
+                            <h3 class="pro-title montserrat"><%= project.title  %></h3>
+                            <p class="pro-description poppins"><%= project.description  %></p>
+
+                            <a class="pro-live-link" target="_blank" href="<%=project.link%>">Live Website&nbsp; <i class="fa-solid fa-arrow-right"></i></a>
+
+                            <form class="delete-form" method="POST" action="/admin/projects/<%=project._id%>?_method=DELETE">
+                                <button class="delete">Delete</button>
+                            </form>
+                        </div>
+                        <div class="pro-div-img">
+                            <img src="<%=project.image%>" alt="">
+                        </div>
+                    </div>
+                <% } %>
+
+            </div>
+            
+        </section>
+
+        <hr style="color: white;">
+
+    </main>
+</body>

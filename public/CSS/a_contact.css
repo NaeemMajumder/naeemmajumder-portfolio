@@ -1,0 +1,20 @@
+.contact-card{
+    padding: 2rem;
+    color: white;
+    background:  linear-gradient(145deg, #1e2024, #23272b);
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    border-radius: 10px;
+}
+
+
+.table{
+    border-collapse: collapse;
+}
+
+.title{
+    padding-right: 4rem !important;
+    border-right: 2px solid black;
+}
+.contact-message{
+    font-size: 0.8rem;
+}

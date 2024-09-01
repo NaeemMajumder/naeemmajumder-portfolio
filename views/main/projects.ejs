@@ -1,0 +1,35 @@
+<% layout("/boilerplate/boilerplate.ejs") %>
+<body>
+    <main>
+        <section id="pro" class="projects width margin services">
+
+            <p class="montserrat skill-p">Projects I have worked on</p>
+            <h2 class="montserrat skill-h2 do">Projects</h2>
+
+            <h3 class="count-review">Total Projects: <span><%= projects.length  %></span></h3>
+
+            <div class="pro-container">
+                
+                <% for(let project of projects) { %>
+                    <div class="pro-card" data-aos="zoom-in">
+                        <div class="pro-div-content">
+                            <p class="pro-tool poppins"><%= project.tools %></p>
+                            <h3 class="pro-title montserrat"><%= project.title  %></h3>
+                            <p class="pro-description poppins"><%= project.description  %></p>
+
+                            <a class="pro-live-link" target="_blank" href="<%=project.link%>">Live Website&nbsp; <i class="fa-solid fa-arrow-right"></i></a>
+
+                        </div>
+                        <div class="pro-div-img">
+                            <img src="<%=project.image%>" alt="">
+                        </div>
+                    </div>
+                <% } %>
+
+            </div>
+            
+        </section>
+
+        <hr style="color: white;">
+    </main>
+</body>

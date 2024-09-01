@@ -1,0 +1,61 @@
+<% layout("/boilerplate/admin_boiler.ejs") %><%= deleteFlash  %>
+<body>
+    <main>
+        <!-- All Review -->
+        <section class="width margin">
+            <h2 id="contact" class="montserrat skill-h2 do review-h2">All Contacts</h2>
+
+            <h3 class="count-review">Total Contact: <span><%= contacts.length  %></span></h3>
+
+            <div class="all-review">
+
+                <% for(contact of contacts){ %>
+                <div class="contact-card">
+
+                    <table class="table" style="color: white;">
+                        <tr>
+                            <th class="title">TITLE</th>
+                            <th>INFORMATION</th>
+                        </tr>
+
+                        <tr>
+                            <td class="title">Name</td>
+                            <td><%= contact.name %></td>
+                        </tr>
+
+                        <tr>
+                            <td class="title">Phone</td>
+                            <td><%= contact.number %></td>
+                        </tr>
+
+                        <tr>
+                            <td class="title">Email</td>
+                            <td><%= contact.email %></td>
+                        </tr>
+
+                        <tr>
+                            <td class="title">Subject</td>
+                            <td><%= contact.subject %></td>
+                        </tr>
+
+                        <tr>
+                            <td class="title">Message</td>
+                            <td class="contact-message"><%= contact.message %></td>
+                        </tr>
+
+                    </table>
+
+
+                    <form class="delete-form" method="POST" action="/admin/contact/<%= contact._id%>?_method=DELETE">
+                        <button class="delete">Delete</button>
+                    </form>
+
+
+                </div>
+                <% } %>
+            </div>
+
+        </section>
+
+    </main>
+</body>

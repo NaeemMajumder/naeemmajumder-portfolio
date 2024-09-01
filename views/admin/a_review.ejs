@@ -1,0 +1,60 @@
+<% layout("/boilerplate/admin_boiler.ejs") %>
+<body>
+    <main>
+
+        <!-- All Review -->
+        <section class="width margin">
+            <h2 id="contact" class="montserrat skill-h2 do review-h2">All Reviews</h2>
+
+            <h3 class="count-review">Total Review: <span><%= reviews.length  %></span></h3>
+
+            <div class="all-review">
+
+                <% for(review of reviews) { %>
+
+                <div class="review-card poppins">
+                    <div class="all-review-div all-review-div1">
+                        <div class="all-review-img">
+                            <img src="<%=review.image%>" alt="">
+                        </div>
+
+                        <div class="review-name">
+                            <h4 class="Name montserrat"><%=review.name%></h4>
+                            <h5 class="Post poppins"><%=review.post%></h5>                            
+                        </div>
+
+                    </div>
+
+                    <div class="all-review-div all-review-div2">
+
+                        <div class="quote">
+                            <img src="/images/quote.png" alt="">
+                        </div>
+
+                        <div class="review-info">
+                            <div class="review-profession">
+                                <h3 class="Profession montserrat"><%=review.profession%></h3>
+                                <p class="time"><%=review.createdAt[0]%> <%=review.createdAt[1]%>, <%=review.createdAt[2]%> - <%=review.createdAt[3]%> <%=review.createdAt[4]%>:<%=review.createdAt[5]%></p>
+                            </div>
+                            <div class="review-rating">
+                                <p class="starability-result" data-rating="<%=review.rating%>"></p>
+                            </div>
+                        </div>
+
+                        <p class="review-comment"><%=review.comment%></p>
+
+                        <form class="delete-form" method="POST" action="/admin/review/<%=review._id%>?_method=DELETE">
+                            <button class="delete">Delete</button>
+                        </form>
+
+                    </div>
+                </div>
+
+                <% } %>
+
+            </div>
+
+        </section>
+
+    </main>
+</body>

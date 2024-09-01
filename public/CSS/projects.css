@@ -1,0 +1,121 @@
+.pro-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pro-card{
+    background: linear-gradient(45deg, #0e060b 0%, #212428 100%);
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid black;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+}
+
+.pro-div-content{
+    width: calc(50% - 2rem);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.pro-div-img{
+    width: 40%;
+    overflow: hidden;
+}
+
+.pro-div-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pro-tool{
+    color: rgb(255, 200, 0);
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.pro-description{
+    color: rgb(135, 142, 153);
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.pro-title{
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: rgb(196, 207, 222);
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.pro-div-content a{
+    color: #ff014f;
+}
+
+
+/* Responsive */
+@media screen and (max-width:1150px) {
+    .pro-div-content{
+        padding-right: 1rem;
+    }
+}
+@media screen and (max-width:1050px) {
+    .pro-div-img{
+        width: 48%;
+        overflow: hidden;
+    }
+}
+@media screen and (max-width:950px) {
+    .pro-div-img{
+        width: 50%;
+        overflow: hidden;
+    }
+}
+@media screen and (max-width:768px) {
+    .pro-card{
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .pro-div-content{
+        width: 100%;
+        padding: 1rem 4rem 2rem 4rem;
+        gap: 1rem;
+    }
+    .pro-title{
+        font-size: 1.75rem;
+    }
+    .pro-div-img{
+        width: 100%;
+        overflow: hidden;
+    }
+}
+@media screen and (max-width:550px) {
+    #pro{
+        padding-top: 4rem;
+    }
+    .pro-div-content{
+        padding: 1rem 2rem 2rem 2rem;
+    }
+    .pro-tool,.pro-description{
+        font-size: 0.8rem;
+
+    }
+    .pro-title{
+        font-size: 1.5rem;
+
+    }
+    .pro-div-content a{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width:400px) {
+    .pro-div-content{
+        padding: 1rem;
+    }
+}

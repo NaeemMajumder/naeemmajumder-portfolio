@@ -1,0 +1,143 @@
+<% layout("/boilerplate/boilerplate.ejs") %>
+<body>
+    <main>
+        <!-- Review Form -->
+        <section class="review-form-div width margin">
+
+            <h2 id="contact" class="montserrat skill-h2 do review-h2">Review Form</h2>
+
+            <div class="review-div montserrat">
+                <form enctype="multipart/form-data" method="POST" action="/review" novalidate class="needs-validation">
+
+                    <div class="name">
+                        <label class="contact-label" for="name">YOUR NAME <span>*</span></label> 
+                        <br>
+                        <input class="input" type="text" id="name" name="name" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please write your name.
+                        </div>
+                    </div>
+
+                    <div class="image">
+                        <label class="contact-label" for="image">IMAGE <span>*</span></label>
+                        <br> 
+                        <input class="input" type="file" id="image" name="image">
+                    </div>
+                
+                    <div class="profession">
+                        <label class="contact-label" for="profession">PROFESSION <span>*</span></label>
+                        <br>
+                        <input class="input" type="text" id="profession" name="profession" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please write your profession.
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <label class="contact-label" for="post">POST / RELATION <span>*</span></label>
+                        <br>
+                        <input class="input" type="text" id="post" name="post" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please write post.
+                        </div>
+                    </div>
+
+                    <div class="rating montserrat">
+                        <label class="contact-label rating-label" for="rating">RATING</label>
+                        <br>
+                        <!--  -->
+                        <fieldset class="starability-slot">
+                            <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="1" checked aria-label="No rating." />
+                            <input type="radio" id="first-rate1" name="rating" value="1" />
+                            <label for="first-rate1" title="Terrible">1 star</label>
+                            <input type="radio" id="first-rate2" name="rating" value="2" />
+                            <label for="first-rate2" title="Not good">2 stars</label>
+                            <input type="radio" id="first-rate3" name="rating" value="3" />
+                            <label for="first-rate3" title="Average">3 stars</label>
+                            <input type="radio" id="first-rate4" name="rating" value="4" />
+                            <label for="first-rate4" title="Very good">4 stars</label>
+                            <input type="radio" id="first-rate5" name="rating" value="5" />
+                            <label for="first-rate5" title="Amazing">5 stars</label>
+                        </fieldset>
+                        <!--  -->
+                    </div>
+
+                    <div class="comment">
+                        <label class="contact-label" for="message">YOUR MESSAGE <span>*</span></label> <br>
+                        <textarea class="textarea" name="comment" id="message" required></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please write a message.
+                        </div>
+                    </div>
+
+                    <button class="btn-send review-btn">SEND MESSAGE</button>
+
+                </form>
+            </div>
+        </section>
+
+
+        <!-- All Review -->
+        <section class="width margin">
+            <h2 id="contact" class="montserrat skill-h2 do review-h2">All Reviews</h2>
+
+            <h3 class="count-review">Total Review: <span><%= reviews.length  %></span></h3>
+
+            <div class="all-review">
+
+                <% for(review of reviews) { %>
+
+                <div class="review-card poppins" data-aos="zoom-in">
+                    <div class="all-review-div all-review-div1">
+                        <div class="all-review-img">
+                            <img src="<%=review.image%>" alt="">
+                        </div>
+
+                        <div class="review-name">
+                            <h4 class="Name montserrat"><%=review.name%></h4>
+                            <h5 class="Post poppins"><%=review.post%></h5>                            
+                        </div>
+
+                    </div>
+
+                    <div class="all-review-div all-review-div2">
+
+                        <div class="quote">
+                            <img src="/images/quote.png" alt="">
+                        </div>
+
+                        <div class="review-info">
+                            <div class="review-profession">
+                                <h3 class="Profession montserrat"><%=review.profession%></h3>
+                                <p class="time"><%=review.createdAt[0]%> <%=review.createdAt[1]%>, <%=review.createdAt[2]%> - <%=review.createdAt[3]%> <%=review.createdAt[4]%>:<%=review.createdAt[5]%></p>
+                            </div>
+                            <div class="review-rating">
+                                <p class="starability-result" data-rating="<%=review.rating%>"></p>
+                            </div>
+                        </div>
+
+                        <p class="review-comment"><%=review.comment%></p>
+
+                    </div>
+                </div>
+
+                <% } %>
+
+            </div>
+
+        </section>
+
+    </main>
+</body>

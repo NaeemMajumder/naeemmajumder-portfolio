@@ -1,0 +1,524 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.containers{
+    flex:1;
+}
+
+/* image */
+.about-div-img{
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+}
+.about-div-img img{
+    width: 35%;
+    display: block;
+    margin: 1rem auto;
+    overflow: hidden;
+    filter: drop-shadow(0 0 10px #ff014f);
+    opacity: 0.8;
+}
+.about-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+}
+
+.about-name h1{
+    font-size: 4rem;
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.about-name h4{
+    font-size: 1.5rem;
+    color: #ff014f;
+    font-weight: 600;
+}
+
+
+/* About me section */
+.aboutme{
+    padding-top: 8rem;
+}
+.about-h2{
+    font-size: 4rem;
+    line-height: 1.2;
+    text-align: center;
+    color: #c4cfde;
+    margin-bottom:3rem;
+    font-weight: 700;
+}
+.about-p{
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    text-align: justify;
+    color: rgb(196, 207, 222);
+    margin-bottom: 1rem;
+}
+.about-p span{
+    background-color: #ff014db3;
+    color: #9acd32;
+    font-weight: 600;
+}
+
+
+/* Education */
+.education{
+    padding-top: 8rem;
+}
+.education-cards{
+    padding: 0 2rem 8rem;
+    flex-direction: column;
+    gap: 3rem;
+    border-bottom: 2px solid #121415;
+}
+.edu-card{
+    width: 100%;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    box-shadow:  10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    background-color: #212428;
+    border-radius: 10px;
+}
+.edu-info{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.edu-img{
+    height: 100%;
+    width: 150px;
+    overflow: hidden;
+}
+.edu-img img {
+    width: 100%;
+}
+.edu-content>span{
+    color: #c4cfde;
+    background-color: #545961;
+    font-size: 0.9rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+}
+.edu-content>h3{
+    color: #c4cfde;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0.75rem 0 1rem 0;
+}
+.edu-content>h4{
+    color: #c4cfde;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+.edu-content>p{
+    color: #878e99;
+    font-size: 1rem;
+}
+
+.visit{
+    padding: 1rem 2rem;
+    background: linear-gradient(145deg, #1e2024, #23272b);
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    font-size: 1rem;
+    color: #ff014f;
+    text-transform: uppercase;
+    border-radius: 6px;
+    font-weight: 500;
+    transition-duration:0.4s;
+}
+.visit:hover{
+    background: linear-gradient(200deg, #151618, #23272b);
+    transform: translateY(-5px);
+}
+
+
+/* Professional Skills */
+.p-skills{
+    padding-top: 8rem;
+}
+.skills-cards{
+    justify-content: space-between;
+    padding: 0 2rem 6rem;
+    border-bottom: 2px solid #121415;
+}
+.skill-card{
+    width: calc(50% - 2rem);
+}
+.skill-card-p{
+    color: #f9004d;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.skill-card-h4{
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #c4cfde;
+    margin-bottom: 2rem;
+}
+.rate-div{
+    margin-bottom: 2rem;
+}
+.rate-div-p{
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #c3cedd;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.rate{
+    height: 13px;
+    width: 100%;
+    background: #212428;
+    border-radius: 10px;
+    box-shadow: inset 8px 8px 16px rgba(0, 0, 0, 0.4588235294), inset -8px -8px 16px rgba(56, 62, 69, 0.4588235294);
+    padding: 3px;
+    overflow: hidden;
+}
+.percent{
+    height: 100%;
+    background: linear-gradient(145deg, #6a67ce 0%, #fc636b 100%);
+    border-radius: 10px;
+    visibility: visible;
+    animation-duration: 0.5s;
+    animation-delay: 0.1s;
+    animation-name: progress;
+}
+#progress1{
+    width: 95%;
+}
+#progress2{
+    width: 85%;
+}
+#progress3{
+    width: 70%;
+}
+#progress4{
+    width: 70%;
+}
+#progress5{
+    width: 75%;
+}
+#progress6{
+    width: 85%;
+}
+#progress7{
+    width: 75%;
+}
+#progress8{
+    width: 85%;
+}
+#progress9{
+    width: 70%;
+}
+#progress10{
+    width: 30%;
+}
+@keyframes progress {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+
+/* Contact */
+
+.about-contact{
+    padding-top: 8rem ;
+}
+.contact-divs{
+    padding: 0 3rem 8rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    border-bottom: 2px solid #121415;
+}
+.contact-card{
+    padding: 3rem;
+    align-items: center;
+    background-color: #212428;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    border-radius: 10px;
+    text-align: center;
+}
+.contact-card>p>i{
+    font-size: 2rem;
+    color: #ff014f;
+    margin-bottom: 1rem;
+}
+.contact-card h4{
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #c4cfde;
+    margin-bottom: 0.5rem;
+}
+.contact-card h5{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #878e99;
+}
+
+
+/* --------------- */
+
+/* Responsive */
+
+@media screen and (max-width:1250px) {
+    /* image */
+    .about-div-img img{
+        width: 40%;
+    }
+}
+@media screen and (max-width:1100px) {
+    /* image */
+    .about-div-img img{
+        width: 45%;
+    }
+
+    /* About me section */
+    .about-p{
+        padding: 0 2rem;
+    }
+}
+@media screen and (max-width:950px) {
+    /* image */
+    .about-div-img{
+        height: 440px;
+    }
+    .about-name{
+        margin-top: -50px;
+    }
+    .about-name h1{
+        font-size: 3.5rem;
+    }
+    .about-name h4{
+        font-size: 1.2rem;
+    }
+
+    /* Education */
+
+    .edu-card{
+        flex-direction: column;
+    }
+
+
+    /* Contact */
+
+    .contact-divs{
+        grid-template-columns: 1fr 1fr;
+    }
+    .freelancer{
+        display: none;
+    }
+}
+@media screen and (max-width:850px) {
+    /* image */
+    .about-div-img{
+        height: 390px;
+    }
+    .about-div-img img{
+        width: 47%;
+    }
+}
+@media screen and (max-width:750px) {
+    /* image */
+    .about-div-img{
+        height: 330px;
+    }
+    .about-div-img img{
+        width: 40%;
+    }
+    .about-name{
+        margin-top: -45px;
+    }
+    .about-name h1{
+        font-size: 3rem;
+    }
+    .about-name h4{
+        font-size: 1.1rem;
+    }
+
+    /* Professional Skills */
+
+    .p-h2{
+        font-size: 3.5rem;
+    }
+    .skills-cards{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .skill-card{
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+@media screen and (max-width:650px) {
+    /* image */
+    .about-div-img{
+        height: 300px;
+    }
+    .about-div-img img{
+        width: 43%;
+    }
+
+    /* Contact */
+
+    .contact-divs{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .freelancer{
+        display: inline;
+    }
+}
+@media screen and (max-width:550px) {
+    /* image */
+    .about-div-img{
+        height: 250px;
+    }
+    .about-div-img img{
+        width: 43%;
+        opacity: 0.9;
+    }
+    .about-name{
+        margin-top: -40px;
+    }
+    .about-name h1{
+        font-size: 2.5rem;
+    }
+    .about-name h4{
+        font-size: 1rem;
+    }
+
+    
+    /* About me section */
+    .about-h2{
+        font-size: 3rem;
+    }
+    .about-p{
+        font-size: 1rem;
+    }
+
+    /* Education */
+
+    .education-cards{
+        padding: 0 2rem 6rem;
+
+    }
+    .edu-info{
+        flex-direction: column;
+    }
+
+    .visit{
+        justify-self: flex-start;
+    }
+
+    /* Professional Skills */
+
+    .p-skills{
+        padding-top: 6rem;
+    }
+    .p-h2{
+        font-size: 2.5rem;
+    }
+    .skill-card{
+        padding: 0;
+    }
+    .skills-cards{
+        padding-bottom: 4rem;
+    }
+    .skill-card-h4{
+        font-size: 1.75rem;
+    }
+
+
+    /* Contact */
+
+    .about-contact{
+        padding-top: 5rem ;
+    }
+
+
+}
+@media screen and (max-width:450px) {
+    /* image */
+    .about-div-img{
+        height: 200px;
+    }
+    .about-div-img img{
+        width: 40%;
+    }
+    .about-name{
+        margin-top: -30px;
+    }
+    .about-name h1{
+        font-size: 2rem;
+    }
+    .about-name h4{
+        font-size: 0.8rem;
+    }
+
+    /* Education */
+
+    .edu-content>h3{
+        font-size: 1.3rem;
+    }
+    .edu-content>h4{
+        font-size: 1.1rem;
+    }
+    .edu-content>p{
+        font-size: 0.8rem;
+    }
+
+    /* Contact */
+    .contact-divs{
+        padding: 0 1.5rem 8rem 1.5rem;
+    }
+    .contact-card{
+        padding: 1.5rem;
+    }
+}
+@media screen and (max-width:350px) {
+    /* image */
+    .about-div-img{
+        height: 170px;
+    }
+    .about-div-img img{
+        width: 40%;
+    }
+    .about-name{
+        margin-top: -25px;
+    }
+    .about-name h1{
+        font-size: 1.6rem;
+    }
+    .about-name h4{
+        font-size: 0.7rem;
+    }
+}
