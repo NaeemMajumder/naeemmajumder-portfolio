@@ -43,11 +43,11 @@ const validateReview = (request,response,next)=>{
 
 
 // Home Route is Root Route
-router.get("/",wrapAsync(RootController.rootHomeGet));
+router.get("/",RootController.rootHomeGet);
 router.post("/",validateContact,wrapAsync(RootController.rootHomePost));
 
 // About Me Route
-router.get("/about",wrapAsync(RootController.rootAboutGet));
+router.get("/about",RootController.rootAboutGet);
 
 // Projects Route
 router.get("/projects",wrapAsync(RootController.rootProjectsGet));

@@ -43,39 +43,38 @@ module.exports.rootReviewGet = async(request,response,next)=>{
     let reviews = await Review.find();
     response.render("./main/review.ejs",{reviews});
 }
-module.exports.rootReviewPost = async(request,response,next)=>{
-    let {name,profession, rating, post, comment} = request.body;
-    let createdAt = new Date(Date.now());
-    let image;
+module.exports.rootReviewPost = async (request, response, next) => {
+        let { name, profession, rating, post, comment } = request.body;
+        let createdAt = new Date(Date.now());
+        let image;
 
-    if(request.file){
-        image = request.file.path;
-    }
-    
-    // Time setup....
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    const month = monthNames[createdAt.getMonth()];
-    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const day = dayNames[createdAt.getDay()];
-    
-    // Full time Array.
-    let time = [month, createdAt.getDate(), createdAt.getFullYear(), day, createdAt.getHours(), createdAt.getMinutes().toString().padStart(2, '0')];
+        if (request.file) {
+            image = request.file.path;
+        }
 
-    let newReview = Review({
-        name,
-        image,
-        profession,
-        post,
-        rating,
-        comment,
-        createdAt:time
-    });
-    let saveReview = await newReview.save();
-    let reviews = await Review.find();
-    request.flash("add","Your review is successfully saved. Thank you for yor review!");
-    // return response.render("./main/review.ejs",{reviews});
-    return response.redirect("/review");
-}
+        // Time setup....
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const month = monthNames[createdAt.getMonth()];
+        const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const day = dayNames[createdAt.getDay()];
+
+        // Full time Array.
+        let time = [month, createdAt.getDate(), createdAt.getFullYear(), day, createdAt.getHours(), createdAt.getMinutes().toString().padStart(2, '0')];
+
+        let newReview = new Review({
+            name,
+            image,
+            profession,
+            post,
+            rating,
+            comment,
+            createdAt: time
+        });
+        await newReview.save();
+        request.flash("add", "Your review is successfully saved. Thank you for your review!");
+        response.redirect("/review");
+};
+
 
 
 // Blog Route
