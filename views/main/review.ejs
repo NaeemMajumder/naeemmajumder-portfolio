@@ -91,9 +91,12 @@
 
         <!-- All Review -->
         <section class="width margin">
-            <h2 id="contact" class="montserrat skill-h2 do review-h2">All Reviews</h2>
 
-            <h3 class="count-review">Total Review: <span><%= reviews.length  %></span></h3>
+            <% if(reviews.length) { %>
+                <h2 id="contact" class="montserrat skill-h2 do review-h2">All Reviews</h2>
+
+                <h3 class="count-review">Total Review: <span><%= reviews.length  %></span></h3>
+            <% } %>
 
             <div class="all-review">
 

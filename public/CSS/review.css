@@ -34,8 +34,8 @@
     font-size: 1.4rem;
     font-weight: 500;
     color: white;
-    margin: 0 2.5rem 3rem 0;
-    text-align: end;
+    margin-bottom: 3rem;
+    text-align: start;
 }
 .count-review span{
     color: #ff014f;
@@ -214,7 +214,6 @@
     .quote{
         display: none;
     }
-
 }
 @media screen and (max-width:500px) {
     /* All Reviews */

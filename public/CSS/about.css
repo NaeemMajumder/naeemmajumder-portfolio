@@ -404,7 +404,8 @@ body{
     }
     .about-div-img img{
         width: 43%;
-        opacity: 0.9;
+        filter: drop-shadow(0 0 5px #ff014f);
+        opacity: 1;
     }
     .about-name{
         margin-top: -40px;
